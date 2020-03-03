@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MoreTweetsBuster
 // @namespace    https://furyutei.work
-// @version      0.0.1
+// @version      0.0.2
 // @description  Turn off the "More Tweets" display when open individual tweet
 // @author       furyu
 // @match        https://*.twitter.com/*/status/*
@@ -11,8 +11,8 @@
 ( () => {
 'use strict';
 
-if ( location.href.match( /^(.*)\?(?:.+&)?ref_url=/ ) ) {
-    // [メモ]クエリに "ref_url=～" が含まれていると「その他のツイート」が表示される→クエリ無しURLにリダイレクト
+if ( location.href.match( /^(.*)\?(?:.+&)?ref_src=/ ) ) {
+    // [メモ]クエリに "ref_src=～" が含まれていると「その他のツイート」が表示される→クエリ無しURLにリダイレクト
     location.replace( RegExp.$1 );
     return;
 }
