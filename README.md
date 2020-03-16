@@ -1,5 +1,5 @@
-MoreTweetsBuster
-================
+[MoreTweetsBuster](https://github.com/furyutei/MoreTweetsBuster)
+================================================================
 
 - License: The MIT license  
 - Copyright (c) 2020 風柳(furyu)  
@@ -13,7 +13,7 @@ MoreTweetsBuster
 ### ユーザースクリプト
 Google Chrome＋[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) や Firefox＋[Violentmonkey](https://addons.mozilla.org/ja/firefox/addon/violentmonkey/) 等のユーザースクリプトが動作可能な環境で、  
 
-&gt; [MoreTweetsBuster](http://furyutei.github.io/MoreTweetsBuster/src/js/MoreTweetsBuster.user.js)  
+> [MoreTweetsBuster](http://furyutei.github.io/MoreTweetsBuster/src/js/MoreTweetsBuster.user.js)  
                                 
 をクリックし、指示に従ってインストール。  
 
