@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MoreTweetsBuster
 // @namespace    https://furyutei.work
-// @version      0.0.5
+// @version      0.0.6
 // @description  Turn off the "More Tweets" display when open individual tweet
 // @author       furyu
 // @match        https://*.twitter.com/*/status/*
@@ -21,10 +21,11 @@ if ( window.name == TOUCHED_NAME ) {
 
 // [メモ] 以下のいずれかの条件で、個別ツイート（https://twitter.com/<screen-name>/status/<tweet-id>）表示時に「その他のツイート」が表示される模様
 // - クエリに "ref_src=～" を含む
+// - [クエリに "s=20" を含む](https://twitter.com/esperecyan/status/1239330675897049090)
 // - リファラが twitter.com 以外
 
 if ( ! (
-    ( /\?(?:.+&)?ref_src=/.test( location.href ) ) ||
+    ( /\?(?:.+&)?(?:ref_src|s)=/.test( location.href ) ) ||
     ( document.referrer && ( new URL( document.referrer ).host != new URL( location.href ).host ) )
 ) ) {
     return;
@@ -50,8 +51,7 @@ let attempt_page_transition = () => {
         if ( 0 < window.pageYOffset ) {
             // TODO: スクロールされていたら一番上のツイートかどうかの判定が困難
             // →暫定的に、何もせずに終了
-            clearTimeout( giveup_timer_id );
-            observer.disconnect();
+            stop_observer();
             return;
         }
         
@@ -75,8 +75,7 @@ let attempt_page_transition = () => {
             }
         }
         
-        clearTimeout( giveup_timer_id );
-        observer.disconnect();
+        stop_observer();
         
         /*
         //if ( parse_status_url( target_link.href ).tweet_id != location_tweet_id ) {
@@ -92,8 +91,17 @@ let attempt_page_transition = () => {
         attempt_page_transition();
     } ),
     
-    giveup_timer_id = setTimeout( () => {
+    stop_observer = () => {
+        if ( giveup_timer_id ) {
+            clearTimeout( giveup_timer_id );
+            giveup_timer_id = null;
+        }
         observer.disconnect();
+    },
+    
+    giveup_timer_id = setTimeout( () => {
+        giveup_timer_id = null;
+        stop_observer();
     }, ATTEMPT_PAGE_TRANSITION_TIMEOUT );
 
 observer.observe( document, { childList: true, subtree: true } );
