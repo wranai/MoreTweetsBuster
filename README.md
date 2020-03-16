@@ -5,7 +5,7 @@ MoreTweetsBuster
 - Copyright (c) 2020 風柳(furyu)  
 - 対象ブラウザ： Google Chrome、Firefox
 
-外部サイトからツイッターの個別ツイート（https://twitter.com/<screen_name>/status/<tweet_id>）を開いた際に表示される「その他のツイート」表示を抑制。  
+外部サイトからツイッターの個別ツイート（https&#58;//twitter.com/&lt;screen_name&gt;/status/&lt;tweet_id&gt;）を開いた際に表示される「その他のツイート」表示を抑制。  
 
 
 ■ インストール方法 
@@ -13,7 +13,7 @@ MoreTweetsBuster
 ### ユーザースクリプト
 Google Chrome＋[Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) や Firefox＋[Violentmonkey](https://addons.mozilla.org/ja/firefox/addon/violentmonkey/) 等のユーザースクリプトが動作可能な環境で、  
 
-> [MoreTweetsBuster](http://furyutei.github.io/MoreTweetsBuster/src/js/MoreTweetsBuster.user.js)  
+&gt; [MoreTweetsBuster](http://furyutei.github.io/MoreTweetsBuster/src/js/MoreTweetsBuster.user.js)  
                                 
 をクリックし、指示に従ってインストール。  
 
