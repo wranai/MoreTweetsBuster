@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         MoreTweetsBuster
-// @name:ja-jp   『その他のツイート』排除
+// @name:ja     『その他のツイート』排除
 // @namespace    https://furyutei.work
 // @version      0.0.6
 // @description  Turn off the "More Tweets" display when open individual tweet
-// @description:ja-jp 個別ツイートを開いた際の『その他のツイート』表示を抑制
+// @description:ja 個別ツイートを開いた際の『その他のツイート』表示を抑制
 // @author       furyu
 // @match        https://*.twitter.com/*/status/*
 // @grant        none
